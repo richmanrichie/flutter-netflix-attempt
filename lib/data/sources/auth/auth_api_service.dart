@@ -21,6 +21,7 @@ class AuthApiServiceImpl extends AuthApiService {
       );
       return Right(response.data);
     } on DioException catch (e) {
+      print('error ========>: ${e.response!.data['message']}');
       return Left(e.response!.data['message']);
     }
   }
@@ -34,7 +35,22 @@ class AuthApiServiceImpl extends AuthApiService {
       );
       return Right(response.data);
     } on DioException catch (e) {
-      return Left(e.response!.data['message']);
+      print('Raw Dio error response: ${e.response!.data}');
+
+      final data = e.response?.data;
+
+      if (data is Map && data.containsKey('message')) {
+        return Left(data['message']);
+      } else if (data is List) {
+        // Optional: handle list error format
+        return Left('Unexpected error format (list)');
+      } else {
+        return Left('Unknown error occurred');
+      }
+    } catch (e, stack) {
+      print('Unexpected error: $e');
+      print(stack);
+      return Left('Unexpected error occurred');
     }
   }
 }

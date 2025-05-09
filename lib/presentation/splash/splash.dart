@@ -5,6 +5,7 @@ import 'package:my_app/core/configs/assets/app_images.dart';
 import 'package:my_app/presentation/%20bloc/splash_cubit.dart';
 import 'package:my_app/presentation/%20bloc/splash_state.dart';
 import 'package:my_app/presentation/auth/pages/sign_in.dart';
+import 'package:my_app/presentation/auth/pages/walkthrough.dart';
 import 'package:my_app/presentation/home/pages/home.dart';
 
 class SplashPage extends StatelessWidget {
@@ -16,10 +17,7 @@ class SplashPage extends StatelessWidget {
       body: BlocListener<SplashCubit, SplashState>(
         listener:
             (context, state) => {
-              if (state is Authenticated)
-                {AppNavigator.pushReplacement(context, const HomePage())}
-              else if (state is UnAuthenticated)
-                {AppNavigator.pushReplacement(context, SignInPage())},
+              AppNavigator.pushReplacement(context, SignInPage()),
             },
         child: Stack(
           children: [

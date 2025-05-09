@@ -40,6 +40,8 @@ dependencies:
   dio:
   logger:
   get_it:
+  shared_preferences:
+  flutter_svg:
 
 dev_dependencies:
   flutter_test:

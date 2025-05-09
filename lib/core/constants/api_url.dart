@@ -1,6 +1,5 @@
 class ApiUrl {
-  static const baseURL =
-      'https://backend-netflix-production-11f1.up.railway.app/';
+  static const baseURL = 'https://huge-trains-tie.loca.lt/';
   static const apiV = 'api/v1/';
 
   static const signup = '${apiV}auth/signup';

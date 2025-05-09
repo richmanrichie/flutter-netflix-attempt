@@ -1,10 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/common/helper/message/display_message.dart';
 import 'package:my_app/common/helper/navigation/app_navigation.dart';
 import 'package:my_app/core/configs/theme/app_colors.dart';
 import 'package:my_app/data/models/auth/signup_req_param.dart';
-import 'package:my_app/domain/usecases/signup.dart';
+import 'package:my_app/domain/auth/usecases/signup.dart';
 import 'package:my_app/presentation/auth/pages/sign_in.dart';
+import 'package:my_app/presentation/home/pages/home.dart';
 import 'package:my_app/service_locator.dart';
 import 'package:reactive_button/reactive_button.dart';
 
@@ -23,13 +25,13 @@ class SignUpPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            _signinText(),
+            _signupTitleText(),
             SizedBox(height: 20),
             _emailField(),
             SizedBox(height: 20),
             _passwordField(),
             SizedBox(height: 20),
-            _singinButton(),
+            _singinButton(context),
             SizedBox(height: 20),
             _signupText(context),
           ],
@@ -38,9 +40,9 @@ class SignUpPage extends StatelessWidget {
     );
   }
 
-  Widget _signinText() {
+  Widget _signupTitleText() {
     return Text(
-      'Sign In',
+      'Sign Up',
       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
     );
   }
@@ -60,7 +62,7 @@ class SignUpPage extends StatelessWidget {
     );
   }
 
-  Widget _singinButton() {
+  Widget _singinButton(BuildContext context) {
     return ReactiveButton(
       title: 'Sign Up',
       activeColor: AppColors.primary,
@@ -69,10 +71,15 @@ class SignUpPage extends StatelessWidget {
           email: _emailController.text,
           password: _passwordController.text,
         );
-        await sl<SignupUseCase>().call(params);
+        return await sl<SignupUseCase>().call(params);
       },
-      onSuccess: () {},
-      onFailure: (error) {},
+      onSuccess: () {
+        AppNavigator.pushAndRemove(context, HomePage());
+      },
+      onFailure: (error) {
+        print('==========> $error');
+        DisplayMessage.errorMessage(error, context);
+      },
     );
   }
 

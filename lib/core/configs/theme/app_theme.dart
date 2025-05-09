@@ -11,9 +11,15 @@ class AppTheme {
       backgroundColor: AppColors.background,
       contentTextStyle: TextStyle(color: Colors.white),
     ),
+    textTheme: const TextTheme(
+      bodyLarge: TextStyle(color: Colors.black),
+      bodyMedium: TextStyle(color: Colors.black),
+      titleLarge: TextStyle(color: Colors.black),
+      // You can customize other variants as needed
+    ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: const Color(0xff2C2B2B),
+      fillColor: AppColors.background,
       hintStyle: const TextStyle(
         color: Color(0xffA7A7A7),
         fontWeight: FontWeight.w400,
