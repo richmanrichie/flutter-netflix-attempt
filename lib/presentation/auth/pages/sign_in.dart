@@ -48,34 +48,37 @@ class SignInPage extends StatelessWidget {
                 child: _regMessage(linearGradient: linearGradient),
               ),
             ),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  left: 16,
-                  right: 16,
-                  top: 60,
-                  bottom: 50,
+            SingleChildScrollView(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
                 ),
-                child: Column(
-                  children: [
-                    _emailField(),
-                    SizedBox(height: 20),
-                    _passwordField(),
-                    SizedBox(height: 20),
-                    _singinButton(context),
-                    Column(
-                      children: [IswButton(label: "label", onPressed: () {})],
-                    ),
-                    SizedBox(height: 20),
-                    _signupText(context),
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: 16,
+                    right: 16,
+                    top: 60,
+                    bottom: 50,
+                  ),
+                  child: Column(
+                    children: [
+                      _emailField(),
+                      SizedBox(height: 20),
+                      _passwordField(),
+                      SizedBox(height: 20),
+                      _singinButton(context),
+                      Column(
+                        children: [IswButton(label: "label", onPressed: () {})],
+                      ),
+                      SizedBox(height: 20),
+                      _signupText(context),
+                    ],
+                  ),
                 ),
               ),
             ),
+            SizedBox(height: 20),
           ],
         ),
       ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/common/helper/navigation/app_navigation.dart';
 import 'package:my_app/common/widgets/isw_button.dart';
 import 'package:my_app/core/configs/theme/app_colors.dart';
+import 'package:my_app/core/routes/routes.dart';
 
 class WalkThroughPage extends StatelessWidget {
   const WalkThroughPage({super.key});
@@ -16,7 +18,7 @@ class WalkThroughPage extends StatelessWidget {
           textBaseline: TextBaseline.alphabetic,
           children: [
             Expanded(child: SafeArea(child: _imageBox())),
-            _buttonContainer(),
+            _buttonContainer(context),
           ],
         ),
       ),
@@ -42,7 +44,7 @@ class WalkThroughPage extends StatelessWidget {
     );
   }
 
-  Widget _buttonContainer() {
+  Widget _buttonContainer(BuildContext context) {
     return Container(
       color: Colors.transparent,
       child: Padding(
@@ -51,12 +53,10 @@ class WalkThroughPage extends StatelessWidget {
           children: [
             Expanded(
               child: IswButton(
-                label: "Sign In",
+                label: "Register",
                 isInverted: true,
                 onPressed:
-                    () => {
-                      // AppNavigator.pushReplacement(context, const SignInPage())
-                    },
+                    () => {AppNavigator.pushNamed(context, Routes.register)},
               ),
             ),
             SizedBox(width: 16),
@@ -64,9 +64,7 @@ class WalkThroughPage extends StatelessWidget {
               child: IswButton(
                 label: "Sign In",
                 onPressed:
-                    () => {
-                      // AppNavigator.pushReplacement(context, const SignInPage())
-                    },
+                    () => {AppNavigator.pushNamed(context, Routes.signin)},
               ),
             ),
           ],

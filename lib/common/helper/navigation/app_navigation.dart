@@ -19,4 +19,12 @@ class AppNavigator {
       (Route<dynamic> route) => false,
     );
   }
+
+  static void pushNamed(BuildContext context, String route) {
+    Navigator.pushNamed(context, route);
+  }
+
+  static void pushNamedAndRemoveUntil(BuildContext context, String route) {
+    Navigator.pushNamedAndRemoveUntil(context, route, (route) => false);
+  }
 }

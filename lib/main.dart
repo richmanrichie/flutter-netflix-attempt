@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_app/core/configs/theme/app_theme.dart';
+import 'package:my_app/core/routes/route_generator.dart';
+import 'package:my_app/core/routes/routes.dart';
 import 'package:my_app/presentation/%20bloc/splash_cubit.dart';
 import 'package:my_app/presentation/splash/splash.dart';
 import 'package:my_app/service_locator.dart';
@@ -23,8 +25,9 @@ class MyApp extends StatelessWidget {
       create: (context) => SplashCubit()..appStarted(),
       child: MaterialApp(
         title: 'Flutter Demo',
+        onGenerateRoute: RouteGenerator.generateRoute,
+        initialRoute: Routes.splash,
         theme: AppTheme.appTheme,
-        home: const SplashPage(),
       ),
     );
   }

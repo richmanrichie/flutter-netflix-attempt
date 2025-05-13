@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_app/common/helper/navigation/app_navigation.dart';
 import 'package:my_app/core/configs/assets/app_images.dart';
+import 'package:my_app/core/routes/routes.dart';
 import 'package:my_app/presentation/%20bloc/splash_cubit.dart';
 import 'package:my_app/presentation/%20bloc/splash_state.dart';
 import 'package:my_app/presentation/auth/pages/sign_in.dart';
@@ -17,7 +18,7 @@ class SplashPage extends StatelessWidget {
       body: BlocListener<SplashCubit, SplashState>(
         listener:
             (context, state) => {
-              AppNavigator.pushReplacement(context, SignInPage()),
+              AppNavigator.pushNamed(context, Routes.walkthrough),
             },
         child: Stack(
           children: [
