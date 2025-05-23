@@ -5,9 +5,6 @@ import 'package:my_app/core/configs/assets/app_images.dart';
 import 'package:my_app/core/routes/routes.dart';
 import 'package:my_app/presentation/%20bloc/splash_cubit.dart';
 import 'package:my_app/presentation/%20bloc/splash_state.dart';
-import 'package:my_app/presentation/auth/pages/sign_in.dart';
-import 'package:my_app/presentation/auth/pages/walkthrough.dart';
-import 'package:my_app/presentation/home/pages/home.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});

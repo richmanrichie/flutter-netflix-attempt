@@ -5,7 +5,6 @@ import 'package:my_app/core/configs/theme/app_theme.dart';
 import 'package:my_app/core/routes/route_generator.dart';
 import 'package:my_app/core/routes/routes.dart';
 import 'package:my_app/presentation/%20bloc/splash_cubit.dart';
-import 'package:my_app/presentation/splash/splash.dart';
 import 'package:my_app/service_locator.dart';
 
 void main() {

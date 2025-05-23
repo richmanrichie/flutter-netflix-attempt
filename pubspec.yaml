@@ -42,6 +42,10 @@ dependencies:
   get_it:
   shared_preferences:
   flutter_svg:
+  flutter_hooks:
+  flutter_riverpod:
+  # For Riverpod with hooks (optional)
+  hooks_riverpod:
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +73,14 @@ flutter:
   assets:
     - assets/images/
     - assets/vectors/
+
+  fonts:
+    - family: Averta
+      fonts:
+        - asset: assets/fonts/Averta-Regular.otf
+        - asset: assets/fonts/Averta-Bold.otf
+        - asset: assets/fonts/Averta-BlackItalic.otf
+          weight: 700
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

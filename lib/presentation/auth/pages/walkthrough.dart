@@ -18,6 +18,7 @@ class WalkThroughPage extends StatelessWidget {
           textBaseline: TextBaseline.alphabetic,
           children: [
             Expanded(child: SafeArea(child: _imageBox())),
+            SizedBox(height: 20),
             _buttonContainer(context),
           ],
         ),
@@ -27,7 +28,7 @@ class WalkThroughPage extends StatelessWidget {
 
   Widget _imageBox() {
     return Padding(
-      padding: const EdgeInsets.only(left: 16, right: 16),
+      padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,

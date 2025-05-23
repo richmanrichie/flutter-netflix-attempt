@@ -7,6 +7,7 @@ class AppColors {
 
   static const iswBlue = Color(0xFF004698);
   static const iswPinkishRed = Color(0xFFFF4263);
+  static const iswLightBlue = Color(0xFFAEDDF1);
   static const iswPlaceHolderGrey = Color.fromARGB(255, 173, 170, 170);
 
   static const violetPurple = Color(0xFF7B61FF);
