@@ -100,7 +100,7 @@ class SignUpPage extends HookConsumerWidget {
     }
 
     return Scaffold(
-      resizeToAvoidBottomInset: true,
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         minimum: EdgeInsets.only(top: 100, right: 16, left: 16),
         child: LayoutBuilder(
@@ -155,7 +155,7 @@ class SignUpPage extends HookConsumerWidget {
                             _passwordField(passwordController, passwordTouched),
                             SizedBox(height: 20),
                             IswButton(
-                              label: "Sign In",
+                              label: "Register",
                               onPressed:
                                   !isValid.value
                                       ? null
